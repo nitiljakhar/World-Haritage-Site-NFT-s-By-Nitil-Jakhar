@@ -1,0 +1,65 @@
+/* 
+// Metacrafters - Beginning Javascript
+//
+// This is a javascript playground for testing your javascript code!
+// When you are ready to test, simply right click and select "Run Code"
+// to see the result print below. If you have more then one snippet of code,
+// you can highlight the code you want to test, and then right click and select "Run Code"
+*/
+
+// Enter your code below this line
+
+// Create a variable to hold your NFTs
+const worldHeritageSites = [];
+
+// This function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function mintNFT(siteName, photo, location, description, significance) {
+    const NFT = {
+        siteName: siteName,
+        photo: photo,
+        location: location,
+        description: description,
+        significance: significance
+    };
+    worldHeritageSites.push(NFT);
+    console.log("Minting", siteName);
+}
+
+// Create a "loop" that will go through an "array" of NFTs
+// and print their metadata with console.log()
+function listNFTs() {
+    for (let i = 0; i < worldHeritageSites.length; i++) {
+        console.log("**********************************");
+        console.log("*       WORLD HERITAGE SITES     *");
+        console.log("**********************************");
+        console.log("SITE NAME:\t" + worldHeritageSites[i].siteName);
+        console.log("PHOTO:\t" + worldHeritageSites[i].photo);
+        console.log("LOCATION:\t" + worldHeritageSites[i].location);
+        console.log("DESCRIPTION:\t" + worldHeritageSites[i].description);
+        console.log("SIGNIFICANCE:\t" + worldHeritageSites[i].significance);
+        console.log("*********************************");
+    }
+}
+
+// Print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+    return worldHeritageSites.length;
+}
+
+// Call your functions below this line
+
+// Minting some NFTs
+mintNFT("Great Wall of China", "great_wall.png", "China", "A series of fortifications made of stone, brick, tamped earth, wood, and other materials.", "Historical significance as a military defense line.");
+mintNFT("Machu Picchu", "machu_picchu.png", "Peru", "An Incan citadel set high in the Andes Mountains.", "Famous for its sophisticated dry-stone construction.");
+mintNFT("Pyramids of Giza", "pyramids_giza.png", "Egypt", "A complex of ancient monuments including three pyramid complexes.", "One of the Seven Wonders of the Ancient World.");
+mintNFT("Taj Mahal", "taj_mahal.png", "India", "An ivory-white marble mausoleum on the south bank of the Yamuna river.", "A UNESCO World Heritage Site for being a masterpiece of Mughal architecture.");
+mintNFT("Acropolis of Athens", "acropolis_athens.png", "Greece", "An ancient citadel located on a rocky outcrop above the city of Athens.", "Contains the remains of several ancient buildings of great architectural and historic significance.");
+
+// Listing all NFTs to see their details
+listNFTs();
+
+// Printing the total number of NFTs created
+console.log("Total World Heritage Sites Minted:", getTotalSupply());
+
